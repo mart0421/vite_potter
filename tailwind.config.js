@@ -106,6 +106,12 @@ module.exports = {
       colors: {
         ...tokens
       },
+<<<<<<< HEAD
+=======
+      bg: {
+        ...tokens
+      },
+>>>>>>> class/day-1-flexbox
       borderColor: { ...tokens },
     },
   },
