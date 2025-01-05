@@ -1,3 +1,5 @@
+@import './theme.scss';
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -39,61 +41,70 @@ h1 {
 }
 
 #app {
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vanilla:hover {
-  filter: drop-shadow(0 0 2em #f7df1eaa);
+
+/* 課堂卡片容器 */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
 }
 
-.card {
-  padding: 2em;
+.class-card {
+  padding: 1rem;
+  border-radius: 4px;
+  background-color: $primary-10;
 }
 
-.read-the-docs {
-  color: #888;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.card-header {
+  display: flex;
+  flex-direction: row; // 水平排列
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+  h2 {
+    color: $dark-80;
   }
-  a:hover {
-    color: #747bff;
+}
+
+.card-tag {
+  border-radius: 2px;
+  border: 1px solid $primary-70;
+  background-color: $primary-50;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 0 0.25rem;
+}
+
+.card-button {
+  color: $primary-10;
+  background-color: $primary-50;
+  padding: 0.5rem 1rem;
+  width: 100%;
+  border-radius: 6px;
+  transition: background-color 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955);
+  &:hover {
+    background-color: $primary-40;
+    transition: background-color 0.5s cubic-bezier(0.455, 0.030, 0.515, 0.955);
   }
-  button {
-    background-color: #f9f9f9;
-  }
+}
+
+.card-content-desc {
+  width: 100%;
+  color: $dark-30;
+  line-clamp: 2;
+  -webkit-line-clamp: 2;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-align: left;
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
 }
